@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>Gedung Komersial Depok</title>
+<title>Dasbor Aset · Gedung Komersial Depok</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap">
@@ -249,24 +249,103 @@ footer .bingkai{display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space
 @media (max-width:520px){.kunci,.tanya{grid-template-columns:minmax(0,1fr)} .kunci div + div,.tanya div + div{padding-left:0;border-left:0;border-top:1px solid var(--garis)} .nav ul{display:none}}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
 html{scroll-behavior:smooth}
+
+/* ===== tata letak dasbor ===== */
+body{padding:0}
+.samping{position:fixed;inset:0 auto 0 0;width:248px;background:var(--permukaan);border-right:1px solid var(--garis);display:flex;flex-direction:column;padding:1.1rem .8rem;z-index:20;overflow-y:auto}
+.merek-d{display:flex;gap:.6rem;align-items:center;color:var(--sogan);text-decoration:none;padding:.3rem .5rem 1.2rem}
+.merek-d svg{width:28px;height:22px;flex:none}
+.merek-d span{font:800 1rem/1.15 var(--f-judul);color:var(--tinta)}
+.merek-d small{display:block;font:500 .72rem/1.3 var(--f-data);color:var(--redup)}
+.menu{list-style:none;margin:0;padding:0;display:grid;gap:.15rem}
+.menu a{display:flex;align-items:center;gap:.7rem;padding:.6rem .7rem;border-radius:8px;color:var(--redup);text-decoration:none;font:500 .9rem/1 var(--f-judul)}
+.menu a svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.menu a:hover{background:var(--kertas);color:var(--tinta)}
+.menu a.aktif{background:var(--sogan-muda);color:var(--sogan)}
+.samping-kaki{margin-top:auto;font:400 .72rem/1.5 var(--f-data);color:var(--redup);padding:.8rem .5rem 0}
+.titik{display:inline-block;width:.5rem;height:.5rem;border-radius:50%;background:var(--pupus);margin-right:.4rem}
+.utama{margin-left:248px;padding:0 clamp(16px,3vw,40px)}
+footer{margin-left:248px;padding-inline:clamp(16px,3vw,40px)}
+.utama > section,.utama > header{border-bottom:0;padding-block:2rem}
+.utama > [hidden]{display:none!important}
+.atas-hp,.tirai{display:none}
+.d-ring{padding-top:0!important}
+.utama > .pembuka{padding-block:1.6rem 1rem}
+.pembuka h1{font-size:clamp(1.8rem,3vw,2.5rem)!important;margin-top:.4rem!important}
+.pembuka-isi{grid-template-columns:minmax(0,1.7fr) minmax(0,1fr)!important;align-items:center!important}
+.pembuka .ringkas{max-width:62ch}
+.pembuka .kunci,.pembuka .kunci + .sumber{display:none}
+.foto-utama img{aspect-ratio:16/10;border-radius:12px}
+.foto-utama figcaption{display:none}
+.status-bar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-bottom:1rem}
+.status-bar > div,.kartu,.panel{background:var(--permukaan);border:1px solid var(--garis);border-radius:12px;padding:1rem 1.1rem}
+.status-bar > div{display:grid;gap:.25rem}
+.status-bar b{font:700 1.15rem/1.2 var(--f-judul)}
+.status-bar .redup{font-size:.85rem;line-height:1.4}
+.pita{height:8px;border-radius:99px;background:var(--kertas);overflow:hidden;margin-top:.3rem}
+.pita i{display:block;height:100%;width:0;background:var(--pupus);transition:width .3s}
+.pita.besar{height:12px}
+.kartu-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-bottom:1rem}
+.kartu{display:grid;gap:.3rem;color:var(--tinta);text-decoration:none;transition:transform .15s,border-color .15s}
+.kartu:hover{transform:translateY(-2px);border-color:var(--sogan)}
+.kartu b{font:700 clamp(1.25rem,2vw,1.6rem)/1.15 var(--f-judul);color:var(--sogan)}
+.kartu span:not(.label){font-size:.85rem;color:var(--redup);line-height:1.4}
+.kartu em{font:500 .75rem var(--f-data);font-style:normal;color:var(--nila);margin-top:.3rem}
+.panel-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:1rem}
+.panel-kepala{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:.8rem}
+.panel-kepala a{font:500 .78rem var(--f-data);text-decoration:none}
+.tabel-alt{width:100%;border-collapse:collapse;font-size:.86rem;min-width:560px}
+.tabel-alt th{font:500 .68rem/1.3 var(--f-data);letter-spacing:.05em;text-transform:uppercase;color:var(--redup);text-align:left;padding:.4rem;border-bottom:1px solid var(--garis)}
+.tabel-alt td{padding:.55rem .4rem;border-bottom:1px solid var(--garis);font-family:var(--f-data);font-variant-numeric:tabular-nums;white-space:nowrap}
+.tabel-alt td:first-child{font-family:var(--f-judul);font-weight:600;white-space:normal}
+.tabel-alt td i{display:inline-block;height:.55rem;width:calc(var(--w) * .6);max-width:60px;background:var(--redup);opacity:.5;border-radius:2px;margin-right:.4rem;vertical-align:middle}
+.tabel-alt tr.p4 td{color:var(--sogan);font-weight:600;background:var(--sogan-muda)}
+.tabel-alt tr.p4 td i{background:var(--sogan);opacity:1}
+.neg{color:var(--merah)!important}
+.nilai4{display:grid;gap:.55rem}
+.nilai4 div{display:grid;grid-template-columns:7.5rem minmax(0,1fr) 2rem;align-items:center;gap:.6rem;font-size:.88rem}
+.nilai4 i{height:10px;border-radius:99px;background:linear-gradient(90deg,var(--sogan) var(--w),var(--kertas) var(--w))}
+.nilai4 b{font-family:var(--f-data);text-align:right}
+.langkah{margin:0;padding-left:1.2rem;display:grid;gap:.45rem;font-size:.9rem}
+.langkah small{display:block;font:400 .74rem var(--f-data);color:var(--redup)}
+.progres{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:1.5rem;align-items:center;background:var(--permukaan);border:1px solid var(--garis);border-radius:12px;padding:1rem 1.2rem;margin-bottom:1rem}
+.progres > div:first-child{display:grid;gap:.2rem}
+.progres b{font:700 1.1rem var(--f-judul)}
+.tabel-pantau{width:100%;border-collapse:collapse;font-size:.88rem;min-width:760px}
+.tabel-pantau th{font:500 .68rem/1.3 var(--f-data);letter-spacing:.05em;text-transform:uppercase;color:var(--redup);text-align:left;padding:.5rem .4rem;border-bottom:2px solid var(--tinta)}
+.tabel-pantau td{padding:.6rem .4rem;border-bottom:1px solid var(--garis);vertical-align:top}
+.tabel-pantau td:first-child{font:600 .85rem var(--f-data);color:var(--sogan)}
+.tabel-pantau tr.gerbang td:first-child::after{content:" gerbang";font:500 .62rem var(--f-data);color:var(--merah);display:block}
+.tabel-pantau select{font:500 .8rem var(--f-data);padding:.3rem .4rem;border:1px solid var(--garis);border-radius:6px;background:var(--kertas);color:var(--tinta)}
+.tabel-pantau select[data-s="Proses"]{border-color:var(--sogan);color:var(--sogan)}
+.tabel-pantau select[data-s="Selesai"]{border-color:var(--pupus);color:var(--pupus);background:var(--pupus-muda)}
+@media (max-width:1100px){.kartu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.panel-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:900px){
+  .samping{transform:translateX(-100%);transition:transform .2s;box-shadow:0 0 40px rgba(0,0,0,.2)}
+  .samping.buka{transform:none}
+  .tirai.buka{display:block;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:15}
+  .utama,footer{margin-left:0}
+  .atas-hp{display:flex;align-items:center;gap:.8rem;position:sticky;top:0;z-index:10;background:var(--kertas);border-bottom:1px solid var(--garis);padding:.6rem 16px;font:600 .9rem var(--f-judul)}
+  .atas-hp button{font-size:1.2rem;background:none;border:1px solid var(--garis);border-radius:6px;padding:.2rem .6rem;color:var(--tinta);cursor:pointer}
+  .status-bar,.progres{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:520px){.kartu-grid{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
 
 <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
 
-<nav class="nav" aria-label="Navigasi halaman">
-  <div class="bingkai">
-    <a class="merek" href="#atas"><svg viewBox="0 0 26 20" aria-hidden="true"><rect x="4" y="3" width="18" height="16" fill="none" stroke="var(--sogan)" stroke-width="2"/><path d="M4 8.5h18M4 13.5h18M13 3v16" stroke="var(--sogan)" stroke-width="1.6"/></svg>Gedung Komersial Depok</a>
-    <ul>
-      <li><a href="#aset">Aset</a></li><li><a href="#tiga-d">Model 3D</a></li><li><a href="#lokasi">Lokasi</a></li>
-      <li><a href="#hbu">Uji HBU</a></li><li><a href="#model">Model</a></li><li><a href="#skema">Rekomendasi</a></li><li><a href="#jalan">Tahapan</a></li>
-      <li><a href="#pintu">Tiga pintu</a></li><li><a href="#metode">Metode</a></li>
-    </ul>
-  </div>
-</nav>
+<aside class="samping" id="samping" aria-label="Menu dasbor">
+  <a class="merek-d" href="#/ringkasan"><svg viewBox="0 0 26 20" aria-hidden="true"><rect x="4" y="3" width="18" height="16" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 8.5h18M4 13.5h18M13 3v16" stroke="currentColor" stroke-width="1.6"/></svg><span>Dasbor Aset<small>Gedung Komersial Depok</small></span></a>
+  <ul class="menu"><li><a href="#/ringkasan" data-menu="ringkasan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13h8V3H3zm0 8h8v-6H3zm10 0h8V11h-8zm0-18v6h8V3z"/></svg>Ringkasan</a></li><li><a href="#/aset" data-menu="aset"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V5l8-3 8 3v16h-6v-5h-4v5z"/></svg>Aset</a></li><li><a href="#/lokasi" data-menu="lokasi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Lokasi</a></li><li><a href="#/hbu" data-menu="hbu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></svg>Uji HBU</a></li><li><a href="#/simulasi" data-menu="simulasi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9m6 10V5m6 14v-7m4 7H2"/></svg>Simulasi</a></li><li><a href="#/rekomendasi" data-menu="rekomendasi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg>Rekomendasi</a></li><li><a href="#/pelaksanaan" data-menu="pelaksanaan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3 8-8M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg>Pelaksanaan</a></li><li><a href="#/metode" data-menu="metode"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h12l4 4v12H4zM8 12h8M8 16h8M8 8h4"/></svg>Metode & sumber</a></li></ul>
+  <div class="samping-kaki"><span class="titik"></span>Analisis per 15 Okt 2026<br>Tim WINOVA · KEC 2026</div>
+</aside>
+<div class="atas-hp"><button type="button" id="buka-menu" aria-label="Buka menu" aria-controls="samping">☰</button><b>Dasbor Aset · Gedung Komersial Depok</b></div>
+<div class="tirai" id="tirai"></div>
+<main class="utama" id="utama">
 
-<header class="pembuka" id="atas">
+<header class="pembuka" id="atas" data-view="ringkasan">
   <div class="bingkai">
     <div class="pembuka-isi">
       <div>
@@ -290,7 +369,53 @@ html{scroll-behavior:smooth}
   </div>
 </header>
 
-<section id="skema">
+
+<section id="ringkasan" data-view="ringkasan" class="d-ring">
+  <div class="bingkai">
+    <div class="status-bar">
+      <div><span class="label">Rekomendasi</span><b>P4 Gabungan</b><span class="redup">kantor dipulihkan; biaya dibagi LMAN dan penyewa jangkar</span></div>
+      <div><span class="label">Gerbang berikutnya</span><b>S6 dan S8</b><span class="redup">surat minat penyewa jangkar dan anggaran masuk RBA, sebelum modal keluar</span></div>
+      <div><span class="label">Syarat terpenuhi</span><b><span id="ring-syarat">0</span> dari 9</b><div class="pita"><i id="ring-pita"></i></div></div>
+    </div>
+    <div class="kartu-grid">
+      <a class="kartu" href="#/simulasi"><span class="label">PNBP per tahun</span><b class="angka">±Rp315 jt</b><span>rentang Rp182–491 jt · dua kali P1</span><em>Buka simulasi →</em></a>
+      <a class="kartu" href="#/simulasi"><span class="label">Nilai fiskal 15 tahun</span><b class="angka">Rp1,08 M</b><span>layak bagi penyewa di semua skenario</span><em>Buka simulasi →</em></a>
+      <a class="kartu" href="#/rekomendasi"><span class="label">Modal negara</span><b class="angka">±Rp1,5 M</b><span>kembali ±4,8 tahun setelah gedung aktif</span><em>Lihat pembagian biaya →</em></a>
+      <a class="kartu" href="#/pelaksanaan"><span class="label">Gedung aktif</span><b class="angka">Bulan 15–18</b><span>sejak keputusan LMAN</span><em>Lihat tahapan →</em></a>
+      <a class="kartu" href="#/hbu"><span class="label">Penggunaan terbaik</span><b>Kantor dipulihkan</b><span>+Rp3,7 M; bangun ulang negatif di semua ketinggian</span><em>Buka uji HBU →</em></a>
+      <a class="kartu" href="#/lokasi"><span class="label">Lokasi</span><b class="angka">20 kantor · 8 halte</b><span>dalam 800 m jalan kaki</span><em>Buka peta →</em></a>
+      <a class="kartu" href="#/aset"><span class="label">Kondisi</span><b>Rusak terkumpul</b><span>plafon dan instalasi, jejak air dari atap</span><em>Lihat aset dan 3D →</em></a>
+      <a class="kartu" href="#/metode"><span class="label">Dasar angka</span><b class="angka">20.000 skenario</b><span>39 referensi bersumber</span><em>Lihat metode →</em></a>
+    </div>
+    <div class="panel-grid">
+      <div class="panel">
+        <div class="panel-kepala"><h3>Perbandingan alternatif</h3><a href="#/simulasi">Ubah asumsi →</a></div>
+        <div class="gulir"><table class="tabel-alt">
+          <tr><th>Alternatif</th><th>PNBP/th</th><th>Nilai fiskal</th><th>Modal negara</th><th>Penyewa tak sanggup</th><th>Peringkat 1</th></tr>
+          <tr><td>P0 Tetap seperti sekarang</td><td>0</td><td class="neg">−Rp0,39 M</td><td>0</td><td>—</td><td>—</td></tr>
+          <tr><td>P1 Penyewa membiayai semua</td><td><i style="--w:34%"></i>Rp151 jt</td><td>Rp1,29 M</td><td>0</td><td>10%</td><td>19%</td></tr>
+          <tr><td>P2 LMAN membiayai semua</td><td><i style="--w:100%"></i>Rp444 jt</td><td>Rp0,76 M</td><td class="neg">Rp2,52 M</td><td>—</td><td>2%</td></tr>
+          <tr><td>P3 Operator</td><td><i style="--w:1%"></i>±0</td><td>±0</td><td>0</td><td class="neg">74%</td><td>2%</td></tr>
+          <tr class="p4"><td>P4 Gabungan</td><td><i style="--w:71%"></i>Rp315 jt</td><td>Rp1,08 M</td><td>Rp1,50 M</td><td>0%</td><td>77%</td></tr>
+        </table></div>
+        <p class="sumber">Nilai tengah 20.000 skenario; horizon 15 tahun; diskonto 6–10%. Sumber: naskah Bab 4.</p>
+      </div>
+      <div class="panel">
+        <div class="panel-kepala"><h3>Empat nilai aset DJKN · P4</h3><a href="#/rekomendasi">Rekomendasi →</a></div>
+        <div class="nilai4">
+          <div><span>Fiskal</span><i style="--w:84%"></i><b>4,2</b></div>
+          <div><span>Ekonomi</span><i style="--w:70%"></i><b>3,5</b></div>
+          <div><span>Layanan publik</span><i style="--w:80%"></i><b>4,0</b></div>
+          <div><span>Sosial</span><i style="--w:80%"></i><b>4,0</b></div>
+        </div>
+        <p class="sumber">Skala 1–5. P4 tidak punya nilai yang lemah; P1 dan P3 punya skor 1,0. Sumber: Tabel 4.5.</p>
+        <div class="panel-kepala" style="margin-top:1.2rem"><h3>Langkah pertama</h3><a href="#/pelaksanaan">Pelacak →</a></div>
+        <ol class="langkah"><li>Kosongkan ruang <small>S1 · LMAN</small></li><li>Uji struktur, atap, listrik <small>S3 · LMAN</small></li><li>Jajaki ≥3 calon penyewa jangkar <small>S6 · LMAN</small></li></ol>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="skema" data-view="rekomendasi">
   <div class="bingkai">
     <div class="kepala">
       <p class="label">Rekomendasi</p>
@@ -340,7 +465,7 @@ html{scroll-behavior:smooth}
   </div>
 </section>
 
-<section id="aset">
+<section id="aset" data-view="aset">
   <div class="bingkai">
     <div class="kepala">
       <p class="label">Bab 1 · Observasi visual</p>
@@ -371,7 +496,7 @@ html{scroll-behavior:smooth}
   </div>
 </section>
 
-<section id="tiga-d">
+<section id="tiga-d" data-view="aset">
   <div class="bingkai">
     <div class="kepala">
       <p class="label">Model 3D</p>
@@ -389,7 +514,7 @@ html{scroll-behavior:smooth}
   <script>document.querySelectorAll('.pilih-3d button').forEach(function(b){b.addEventListener('click',function(){document.getElementById('model-3d').src=b.dataset.src;document.querySelectorAll('.pilih-3d button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});});});</script>
 </section>
 
-<section id="lokasi">
+<section id="lokasi" data-view="lokasi">
   <div class="bingkai">
     <div class="kepala">
       <p class="label">Bab 2 · Analisis lokasi</p>
@@ -417,7 +542,7 @@ html{scroll-behavior:smooth}
   </div>
 </section>
 
-<section id="hbu">
+<section id="hbu" data-view="hbu">
   <div class="bingkai">
     <div class="kepala">
       <p class="label">Bab 3 · Uji penggunaan tertinggi dan terbaik (HBU)</p>
@@ -449,7 +574,7 @@ html{scroll-behavior:smooth}
   </div>
 </section>
 
-<section id="model">
+<section id="model" data-view="simulasi">
   <div class="bingkai">
     <div class="kepala">
       <p class="label">Bab 4 · Model keuangan · coba sendiri</p>
@@ -498,7 +623,7 @@ html{scroll-behavior:smooth}
   </div>
 </section>
 
-<section id="jalan">
+<section id="jalan" data-view="pelaksanaan">
   <div class="bingkai">
     <div class="kepala">
       <p class="label">Bab 5 · Tahapan</p>
@@ -530,7 +655,33 @@ html{scroll-behavior:smooth}
   </div>
 </section>
 
-<section id="pintu">
+
+<section id="pantau" data-view="pelaksanaan">
+  <div class="bingkai">
+    <div class="kepala">
+      <p class="label">Pemantauan</p>
+      <h2>Pelacak syarat sebelum modal keluar</h2>
+      <p>Status awal per 15 Okt 2026: semua syarat belum dimulai. Ubah status untuk mencoba cara LMAN memantau aset ini. Perubahan hanya tersimpan di peramban Anda.</p>
+    </div>
+    <div class="progres"><div><b id="p-angka">0 dari 9 syarat terpenuhi</b><span id="p-gerbang" class="redup">Modal negara belum boleh keluar: S6 dan S8 belum terpenuhi.</span></div><div class="pita besar"><i id="p-pita"></i></div></div>
+    <div class="gulir"><table class="tabel-pantau" id="tabel-pantau">
+      <tr><th>Kode</th><th>Syarat</th><th>Fase</th><th>Penanggung jawab</th><th>Bukti</th><th>Status</th></tr>
+    </table></div>
+    <h3 style="margin:2.2rem 0 .8rem">Indikator setelah keputusan</h3>
+    <div class="gulir"><table class="tabel-kecil">
+      <tr><th>Yang dipantau</th><th>Target</th><th>Bila meleset</th></tr>
+      <tr><td>Surat minat penyewa jangkar</td><td>Minimal satu, sebelum modal keluar</td><td>Lantai atas disewakan per lantai; atau P1 bila ada penyewa yang membiayai seluruh renovasi</td></tr>
+      <tr><td>Anggaran LMAN</td><td>±Rp1,5 M masuk RBA</td><td>Varian modal ±Rp0,65 M (PNBP ±Rp201 jt/th); tanpa modal sama sekali, P1</td></tr>
+      <tr><td>Biaya pemulihan</td><td>Sesuai hasil uji struktur</td><td>Cadangan 10–15%; bagian bangunan bersama dikerjakan lebih dulu</td></tr>
+      <tr><td>Waktu sampai gedung aktif</td><td>≤18 bulan</td><td>Lantai atas dibuka lebih dulu; lantai dasar menyusul</td></tr>
+      <tr><td>Keterisian lantai dasar</td><td>≥85% enam bulan setelah buka</td><td>Campuran usaha dan tarif diubah</td></tr>
+      <tr><td>Penerimaan</td><td>Sesuai tarif; tunggakan ≤3 bulan; patokan ±Rp315 jt/th</td><td>Di bawah Rp182 jt, skema ditinjau</td></tr>
+      <tr><td>Keselamatan</td><td>SLF berlaku; nol insiden</td><td>Pemakaian area terkait dihentikan sampai diperbaiki</td></tr>
+    </table></div>
+    <p class="sumber" style="margin-top:.6rem">Sumber: naskah Tabel 5.3–5.4; PMK 144/PMK.06/2020; PP 16/2021.</p>
+  </div>
+</section>
+<section id="pintu" data-view="rekomendasi">
   <div class="bingkai">
     <div class="kepala">
       <p class="label">Satu aset, tiga pintu</p>
@@ -562,7 +713,7 @@ html{scroll-behavior:smooth}
   </div>
 </section>
 
-<section id="metode">
+<section id="metode" data-view="metode">
   <div class="bingkai">
     <div class="kepala">
       <p class="label">Metode dan sumber</p>
@@ -643,6 +794,7 @@ html{scroll-behavior:smooth}
   </div>
 </section>
 
+</main>
 <footer>
   <div class="bingkai">
     <span>Gedung Komersial Depok · purwarupa pendukung desk analysis HBU, Tim WINOVA, KEC 2026</span>
@@ -910,5 +1062,61 @@ if (typeof module !== "undefined") module.exports = sakaModel;
 })();
 </script>
 
+
+<script>
+(function () {
+  var MAP = {atas: "ringkasan", aset: "aset", "tiga-d": "aset", lokasi: "lokasi", hbu: "hbu", model: "simulasi", skema: "rekomendasi", pintu: "rekomendasi", jalan: "pelaksanaan", pantau: "pelaksanaan", metode: "metode"};
+  var views = document.querySelectorAll("[data-view]");
+  var samping = document.getElementById("samping"), tirai = document.getElementById("tirai");
+  function tutup() { samping.classList.remove("buka"); tirai.classList.remove("buka"); }
+  document.getElementById("buka-menu").addEventListener("click", function () { samping.classList.add("buka"); tirai.classList.add("buka"); });
+  tirai.addEventListener("click", tutup);
+  function tampil() {
+    var h = location.hash.replace(/^#\/?/, "");
+    var v = MAP[h] || h || "ringkasan";
+    if (!document.querySelector('[data-view="' + v + '"]')) v = "ringkasan";
+    views.forEach(function (el) { el.hidden = el.dataset.view !== v; });
+    document.querySelectorAll(".menu a").forEach(function (a) { a.classList.toggle("aktif", a.dataset.menu === v); });
+    tutup();
+    if (MAP[h] && MAP[h] !== h) { var t = document.getElementById(h); if (t) t.scrollIntoView(); } else window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", tampil);
+  tampil();
+
+  // pelacak syarat
+  var S = [
+    ["S1", "Ruang dikosongkan", "0 Persiapan", "LMAN, dengan pemilik barang", "Berita acara pengosongan", 0],
+    ["S2", "Hak reklame, menara, dan area depan jelas", "0 Persiapan", "LMAN, pemilik reklame dan menara", "Perjanjian atau pemutusan hak", 0],
+    ["S3", "Uji struktur, atap, dan listrik menyatakan layak dipulihkan", "0 Persiapan", "LMAN, konsultan struktur", "Laporan uji teknis", 0],
+    ["S4", "Status PBG/SLF diketahui; selisih luas 137 m² dicocokkan", "0 Persiapan", "LMAN, Pemkot Semarang", "Dokumen PBG/SLF; hasil ukur ulang", 0],
+    ["S5", "Nilai wajar sewa dari Penilai; tarif ditetapkan", "1 Penetapan", "Penilai; Direktur Utama LMAN", "Laporan penilaian; keputusan tarif", 0],
+    ["S6", "Minimal satu surat minat penyewa jangkar", "0 Persiapan", "LMAN (pemasaran)", "Surat minat bertanda tangan", 1],
+    ["S7", "Lobi dan tangga terpisah dari unit; evakuasi sesuai PBG", "1 Penetapan", "LMAN, perencana; Pemkot", "Gambar rencana disetujui", 0],
+    ["S8", "Anggaran ±Rp1,5 M masuk RBA LMAN", "1 Penetapan", "LMAN", "RBA yang disahkan", 1],
+    ["S9", "SLF terbit sebelum gedung dibuka", "2 Pemulihan", "Pemkot Semarang", "Sertifikat Laik Fungsi", 0]];
+  var KEY = "dasbor-depok-syarat", st = {};
+  try { st = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { st = {}; }
+  var tb = document.getElementById("tabel-pantau");
+  S.forEach(function (r) {
+    var tr = document.createElement("tr"); if (r[5]) tr.className = "gerbang";
+    tr.innerHTML = "<td>" + r[0] + "</td><td>" + r[1] + "</td><td>" + r[2] + "</td><td>" + r[3] + "</td><td>" + r[4] + "</td><td></td>";
+    var sel = document.createElement("select"); sel.setAttribute("aria-label", "Status " + r[0]);
+    ["Belum", "Proses", "Selesai"].forEach(function (o) { var op = document.createElement("option"); op.textContent = o; sel.appendChild(op); });
+    sel.value = st[r[0]] || "Belum"; sel.dataset.s = sel.value;
+    sel.addEventListener("change", function () { st[r[0]] = sel.value; sel.dataset.s = sel.value; try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} hitung(); });
+    tr.lastChild.appendChild(sel); tb.appendChild(tr);
+  });
+  function hitung() {
+    var n = S.filter(function (r) { return st[r[0]] === "Selesai"; }).length;
+    var pct = Math.round(n / 9 * 100) + "%";
+    document.getElementById("p-angka").textContent = n + " dari 9 syarat terpenuhi";
+    document.getElementById("ring-syarat").textContent = n;
+    document.getElementById("p-pita").style.width = pct; document.getElementById("ring-pita").style.width = pct;
+    var g = ["S6", "S8"].filter(function (k) { return st[k] !== "Selesai"; });
+    document.getElementById("p-gerbang").textContent = g.length ? "Modal negara belum boleh keluar: " + g.join(" dan ") + " belum terpenuhi." : "Gerbang modal terbuka: S6 dan S8 terpenuhi.";
+  }
+  hitung();
+})();
+</script>
 </body>
 </html>
