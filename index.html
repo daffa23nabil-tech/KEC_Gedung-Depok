@@ -7,7 +7,7 @@
 <title>Dasbor Aset · Gedung Komersial Depok</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap">
 <style>
 /* Tata letak: potongan gedung. Halaman dibaca dari atap ke lantai dasar; satu kolom teks, gambar selebar bingkai. */
 :root{
@@ -330,6 +330,79 @@ footer{margin-left:248px;padding-inline:clamp(16px,3vw,40px)}
   .status-bar,.progres{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:520px){.kartu-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* ===== tema naskah: putih-biru, Poppins; selalu terang ===== */
+:root,
+:root[data-theme="dark"]{
+  --kertas:#F4F7FB; --permukaan:#FFFFFF; --tinta:#14213D; --redup:#5B6B80; --garis:#DCE4EE;
+  --sogan:#1A4F9F; --sogan-muda:#E7EEF8; --nila:#2A78C2; --nila-muda:#E4F1FB;
+  --pupus:#2E9D4E; --pupus-muda:#E3F3E8; --merah:#B04A3A; --merah-muda:#F7E3DF;
+  --biru-tua:#163F80; --bayang:0 1px 2px rgba(20,33,61,.06),0 4px 14px rgba(20,33,61,.06);
+  --f-judul:"Poppins","Segoe UI",system-ui,sans-serif;
+  --f-teks:"Poppins","Segoe UI",system-ui,sans-serif;
+  --f-data:"Poppins","Segoe UI",system-ui,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --kertas:#F4F7FB; --permukaan:#FFFFFF; --tinta:#14213D; --redup:#5B6B80; --garis:#DCE4EE;
+  --sogan:#1A4F9F; --sogan-muda:#E7EEF8; --nila:#2A78C2; --nila-muda:#E4F1FB;
+  --pupus:#2E9D4E; --pupus-muda:#E3F3E8; --merah:#B04A3A; --merah-muda:#F7E3DF;
+  color-scheme:light}}
+body{font-size:.98rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3{color:var(--tinta);letter-spacing:-.01em}
+h2{font-weight:700}
+.label{font:600 .7rem/1.3 var(--f-data);letter-spacing:.07em;color:var(--sogan)}
+.angka,.tabel-alt td,.nilai4 b{font-variant-numeric:tabular-nums}
+
+/* menu samping biru seperti kepala tabel naskah */
+.samping{background:var(--sogan);border-right:0;color:#fff}
+.merek-d,.merek-d span{color:#fff}
+.merek-d small{color:rgba(255,255,255,.72)}
+.menu a{color:rgba(255,255,255,.82);font-weight:500}
+.menu a:hover{background:rgba(255,255,255,.12);color:#fff}
+.menu a.aktif{background:#fff;color:var(--sogan);font-weight:600;box-shadow:var(--bayang)}
+.samping-kaki{color:rgba(255,255,255,.7);border-top:1px solid rgba(255,255,255,.18)}
+.samping-kaki .titik{background:#7BE09A}
+@media (max-width:900px){
+  .atas-hp{background:var(--sogan);color:#fff;border-bottom:0}
+  .atas-hp button{color:#fff;border-color:rgba(255,255,255,.5)}
+}
+
+/* pembuka */
+.utama > .pembuka{border-bottom:3px solid var(--sogan)!important;margin-bottom:.4rem}
+.pembuka h1{color:var(--sogan)}
+
+/* kartu dan panel */
+.status-bar > div,.kartu,.panel,.progres{border:1px solid var(--garis);border-radius:14px;box-shadow:var(--bayang);background:var(--permukaan)}
+.kartu{border-top:4px solid var(--sogan)}
+.kartu:hover{border-color:var(--sogan);box-shadow:0 6px 20px rgba(26,79,159,.16)}
+.kartu b{color:var(--sogan)}
+.kartu em{color:var(--nila);font-weight:600}
+.status-bar > div{border-left:4px solid var(--nila)}
+.status-bar > div:first-child{border-left-color:var(--sogan)}
+.panel-kepala h3{color:var(--sogan)}
+
+/* tabel: kepala biru, teks putih */
+.utama table th{background:var(--sogan)!important;color:#fff!important;border-bottom:0!important;font:600 .72rem/1.3 var(--f-data)!important;letter-spacing:.03em;text-transform:none!important;padding:.6rem .55rem!important}
+.utama table th:first-child{border-top-left-radius:8px}
+.utama table th:last-child{border-top-right-radius:8px}
+.utama table td{border-bottom:1px solid var(--garis)}
+.utama table tr:nth-child(even) td{background:#F8FAFD}
+.tabel-alt tr.p4 td{background:var(--sogan-muda)!important;color:var(--sogan)}
+.tabel-alt td i{background:var(--nila);opacity:.6}
+
+/* grafik dan kontrol */
+.g-lain{fill:#9A9A9A;opacity:.7}
+.nilai4 i{background:linear-gradient(90deg,var(--sogan) var(--w),var(--sogan-muda) var(--w))}
+.pita{background:var(--sogan-muda)}
+.tenor button,.tombol{border-radius:8px;background:var(--permukaan)}
+.tenor button[aria-pressed="true"]{background:var(--sogan);color:#fff;border-color:var(--sogan)}
+.chip{border-radius:999px}
+.pilih-3d button{border-radius:8px!important}
+input[type=range]{accent-color:var(--sogan)}
+.tabel-pantau select{border-radius:8px;background:var(--permukaan)}
+footer{color:var(--redup)}
+@media (max-width:900px){.pembuka-isi{grid-template-columns:minmax(0,1fr)!important}.pembuka h1{font-size:1.9rem!important}}
 </style>
 </head>
 <body>
@@ -478,7 +551,7 @@ footer{margin-left:248px;padding-inline:clamp(16px,3vw,40px)}
           <dt>Bangunan</dt><dd><span class="angka">989 m²</span> administratif; ±852 m² dari geometri peta (selisih dicocokkan di syarat S4)</dd>
           <dt>Bentuk</dt><dd>Tiga lantai di sudut dua muka; lantai atas terbuka berkolom dengan void</dd>
           <dt>Pemakaian kini</dt><dd>Penyimpanan barang (kardus arsip, perabot lama); sebagian ruang kosong</dd>
-          <dt>Nilai tanah</dt><dd>Zona Nilai Tanah BPN 2026 kelas tertinggi peta (&gt;Rp50 juta/m²): ≥Rp29,6 M</dd>
+          <dt>Nilai tanah</dt><dd>ZNT dua titik koridor: &gt;Rp20 juta/m² (teks informasi), kelas &gt;Rp50 juta/m² (legenda); nilai tanah persil belum ditetapkan</dd>
         </dl>
         <ol class="temuan">
           <li><span><b>Lantai terbuka yang bisa dibagi.</b> Ruang berkolom dengan jendela memanjang di dua sisi; cocok untuk kerja berpenghuni tetap.</span></li>
@@ -547,7 +620,7 @@ footer{margin-left:248px;padding-inline:clamp(16px,3vw,40px)}
     <div class="kepala">
       <p class="label">Bab 3 · Uji penggunaan tertinggi dan terbaik (HBU)</p>
       <h2>Penggunaan tertinggi dan terbaik</h2>
-      <p>Setiap calon penggunaan menjawab empat pertanyaan berurutan. Calon yang gagal di satu pertanyaan berhenti di situ.</p>
+      <p>Setiap calon penggunaan dinilai dengan empat ukuran yang sama. Calon dengan hambatan besar tidak diprioritaskan pada konfigurasi gedung sekarang.</p>
     </div>
     <div class="tanya">
       <div><b>Boleh?</b><span>Legal: RTRW, PMK 144/2020, PP 16/2021</span></div>
@@ -946,9 +1019,9 @@ if (typeof module !== "undefined") module.exports = sakaModel;
       ["Toko, showroom", S("Lolos", "ok"), S("Lantai dasar", "syarat"), S("Lantai dasar", "syarat"), '<span class="hasil-opsi">Masuk opsi C · Rp3,7 M</span>'],
       ["Makan-minum", S("Lolos", "ok"), S("Lantai dasar", "syarat"), S("Lantai dasar", "syarat"), '<span class="hasil-opsi">Masuk opsi C</span>'],
       ["Klinik", S("Bersyarat: izin faskes", "syarat"), S("Lantai dasar", "syarat"), S("Bersyarat", "syarat"), '<span class="hasil-opsi">Masuk opsi C</span>'],
-      ["Penginapan", S("Lolos", "ok"), S("Gugur: instalasi basah per kamar", "gugur"), S("Gugur: 15 hotel ≤800 m", "gugur"), '<span class="s s-kosong">berhenti</span>'],
-      ["Pelatihan", S("Bersyarat", "syarat"), S("Gugur: kedatangan serentak, satu tangga, void terbuka", "gugur"), '<span class="s s-kosong">—</span>', '<span class="s s-kosong">berhenti</span>'],
-      ["Pameran", S("Kurang sejalan: RTRW arahkan ke kecamatan lain", "syarat"), S("Gugur: alasan sama dengan pelatihan", "gugur"), '<span class="s s-kosong">—</span>', '<span class="s s-kosong">berhenti</span>']];
+      ["Penginapan", S("Lolos", "ok"), S("Tidak diprioritaskan: instalasi basah per kamar", "gugur"), S("Pesaing: 15 hotel ≤800 m", "gugur"), '<span class="s s-kosong">Tidak diprioritaskan</span>'],
+      ["Pelatihan", S("Bersyarat", "syarat"), S("Tidak diprioritaskan: kedatangan serentak, satu tangga", "gugur"), '<span class="s s-kosong">—</span>', '<span class="s s-kosong">Tidak diprioritaskan</span>'],
+      ["Pameran", S("Kurang sejalan: RTRW arahkan ke kecamatan lain", "syarat"), S("Tidak diprioritaskan: alasan sama dengan pelatihan", "gugur"), '<span class="s s-kosong">—</span>', '<span class="s s-kosong">Tidak diprioritaskan</span>']];
     document.querySelector("#saringan tbody").innerHTML = rows.map(r => "<tr>" + r.map(c => "<td>" + c + "</td>").join("") + "</tr>").join("");
   })();
 
